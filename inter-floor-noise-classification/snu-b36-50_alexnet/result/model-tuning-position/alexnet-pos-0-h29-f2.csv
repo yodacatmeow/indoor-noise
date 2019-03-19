@@ -1,0 +1,2 @@
+,epoch,train_err,train_acc,valid_err,valid_acc
+0,0,inf,0.12500000428408384,160726896.0,0.12820513107073614
