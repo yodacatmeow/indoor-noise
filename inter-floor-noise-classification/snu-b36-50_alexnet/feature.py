@@ -62,7 +62,7 @@ def feature(tid, event_start=0):
         # Time duration; window_length; FFT_point; hop_length
         time_len = 3; win_length = 583; n_fft = 2048; hop_length = 583
         # File path
-        filepath = get_audio_path('../audio', tid)
+        filepath = get_audio_path('audio', tid)
         # Read audio files
         s_n, fs = librosa.load(filepath, sr=None, mono=True)  # s_n = signal, fs = sampling freq.
         # If audio input is shorter than "time_len", then pads zeros

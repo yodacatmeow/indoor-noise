@@ -17,39 +17,33 @@ from load_data import load
 from cfmtx import cfmtx
 
 # default parameters
-# - Best learning-rate (type):
-# - Best learning-rate (position): 0.0188400538952988
-# - Best L2-penalty (type):
-# - Best L2-Penalty (position): 0.000188739557416965
-# default parameters
 pp  = {
     'gpu_device':'device:GPU:0',
     'dtype':tf.float32,
 
-    'gen_data':False,
+    'gen_data':True,
     'saver':False,
     'is_transfer_learn':True,
     'freeze_layer':False,
-    'pretrain_weights':'bvlc_alexnet.npy',  # Not used; import the weight @"alexnet_adap.py"
+    'pretrain_weights':'bvlc_alexnet.npy',    # Not used; import the weights in "alexnet_adap.py"
 
-    'random_search_cnt_max':1,  # For random search, use 100
-    'learning_rate_range':[np.log10(0.0188400538952988),np.log10(0.0188400538952988)],     # For hyperparameter search, np.log10(0.0001),np.log10(100)
-    'penalty_range':[np.log10(0.000188739557416965),np.log10(0.000188739557416965)],       # For hyperparameter search, np.log10(0.0001),np.log10(100)
+    'random_search_cnt_max':2,
+    'learning_rate_range':[np.log10(0.0001),np.log10(100)],
+    'penalty_range':[np.log10(0.0001),np.log10(100)],
 
-    'rec_name_summary':'result/alexnet-pos-0-cv-summary.csv',
-    'rec_name':'result/alexnet-pos-0',
-    'rec_name_cfm':'result/alexnet-pos-0',
-    'saver_name':'saver_alexnet-pos-0',
-    'metadata_path':'../dataset/metadata_type.csv',
-    'traindata_path':'../dataset/train_pos_3s_227_227',
-    'validdata_path':'../dataset/valid_pos_3s_227_227',
+    'rec_name_summary':'result/alexnet-type-cv-summary.csv', # 'type' <-> 'position'
+    'rec_name':'result/alexnet-type',          # 'type' <-> 'position'
+    'rec_name_cfm':'result/alexnet-type',      # 'type' <-> 'position'
+    'metadata_path':'metadata_type.csv',       # 'type' <-> 'position'
+    'traindata_path':'train_type_3s_227_227',  # 'type' <-> 'position'
+    'validdata_path':'valid_type_3s_227_227',  # 'type' <-> 'position'
 
     'label_column_name':'category',
     'num_fold':5,
-    'n_category':9,
+    'n_category':5,                            # '5' (type) <-> '9' (position)
     'batch_size_tr':39,
     'batch_size_val':10,
-    'n_epoch':50    # For random search, use 30
+    'n_epoch':2                                # For random search, use '30'
 }
 
 # Generate random hyper-parameters with size of "random_search_cnt_max"
@@ -191,8 +185,8 @@ with tf.device(pp['gpu_device']):
 
                     # - For confusion mtx
                     prob = sess.run(alexnet.probs, feed_dict={alexnet.imgs: batch_x})   # Probability
-                    preds = (np.argmax(prob, axis=1))                           # Predictions
-                    label = (np.argmax(batch_y, axis=1))                        # Labels
+                    preds = (np.argmax(prob, axis=1))                                   # Predictions
+                    label = (np.argmax(batch_y, axis=1))                                # Labels
                     # print(preds)
                     # print(label)
                     cfm = cfm + cfmtx(label, preds, pp['n_category'], pp['batch_size_val'])  # Update confusion matrix

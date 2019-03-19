@@ -115,7 +115,7 @@ def draw2(file, normalize = True, xticks_ref=None, yticks_ref=None):
 if __name__ == "__main__":
 
     metadata_path = 'dataset/metadata_box_case4l-x-k1.csv'  # where is meta-data?
-    label_column_name = 'category'  # @metdata.csv, which index indicate category?
+    label_column_name = 'category'  # @metdata.csv, which index indicates category?
 
     # Get label dictionary from the metadata
     # - Dictionary

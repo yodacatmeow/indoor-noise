@@ -1,8 +1,6 @@
 """
-Hwiyong Choi, 2018, its_me_chy@snu.ac.kr
-
 Description
-    # AlexNet implementation in TensorFlow
+    # AlexNet implementation with TensorFlow
     # Michael's implementation is adapted under class "alexnet"
 
 References
