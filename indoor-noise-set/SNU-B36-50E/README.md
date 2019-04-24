@@ -8,7 +8,7 @@ The inter-floor noises included in this dataset can be classified into 5 types o
 
 *(ToDo: img_19 positions)*
 
-Each audio clip can be labeled as a noise type and a position, where the first row of the following table denotes the distance from the origin along the X axis.
+Each audio clip can be labeled as a noise type and a position, where the first row of the following table denotes the distance from the origin along the X axis. And the digits in the table (e.g. 001) denote names of folders in [SNU-B36-50E/audio](https://github.com/yodacatmeow/indoor-noise/tree/master/indoor-noise-set/SNU-B36-50E/audio). Each folder in this path contains 50 inter-floor noises.
 
 ![](https://github.com/yodacatmeow/indoor-noise/blob/master/indoor-noise-set/SNU-B36-50E/figure/categories.jpeg)
 
