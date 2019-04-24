@@ -4,13 +4,13 @@
 
 The inter-floor noises included in this dataset can be classified into 5 types or 19 positions. The inter-floor noise types are a medicine ball falling to the floor from a height of 1.2 m (**MB**), a hammer falling from 1.2 m above the floor (**HD**),  hammering (**HH**), dragging a chair (**CD**), and a running vacuum cleaner (**VC**).
 
-![<https://github.com/yodacatmeow/indoor-noise/blob/master/indoor-noise-set/SNU-B36-50E/figure/noise_type.png>]()
+![](https://github.com/yodacatmeow/indoor-noise/blob/master/indoor-noise-set/SNU-B36-50E/figure/noise_type.png)
 
 *(ToDo: img_19 positions)*
 
 Each audio clip can be labeled as a noise type and a position.
 
-
+![](https://github.com/yodacatmeow/indoor-noise/blob/master/indoor-noise-set/SNU-B36-50E/figure/categories.jpeg)
 
 ## Citing
 
