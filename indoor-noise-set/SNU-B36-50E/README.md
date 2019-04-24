@@ -1,23 +1,14 @@
 # SNU-B36-50E
 
-- SNU-B36-50E is an inter-floor noise dataset gathered in Building 36 at Seoul National University.
-- SNU-B36-50 (*older version with smaller number of audio clips*) is merged and rearranged into here.
-- Inter-floor noises are recored with a single microphone of a smartphone (Samsung Galaxy S6).
-- The sampling frequency is set as 44,100 Hz.
+**SNU-B36-50E** is an inter-floor noise dataset collected in building 36 at Seoul National University. **SNU-B36-50** (*older version with smaller number of audio clips*) is rearranged into here. A single microphone in a smartphone (Samgsung Galaxy S6) was used as a receiver to record inter-floor noises. Inter-floor noises were sampled at 44,100 Hz for ~5 s.
 
+The inter-floor noises included in this dataset can be classified into 5 types or 19 positions. The inter-floor noise types are a medicine ball falling to the floor from a height of 1.2 m (**MB**), a hammer falling from 1.2 m above the floor (**HD**),  hammering (**HH**), dragging a chair (**CD**), and a running vacuum cleaner (**VC**).
 
+*(ToDo: img_5 types)*
 
-## Category
+*(ToDo: img_19 positions)*
 
-- Each audio clip in the dataset has two labels: noise type and noise source position
-  - Noise type (5 types)
-    - MB: a medicine ball at height 1.2 m above the floor falls and hits the floor
-    - HD: a hammer at height 1.2 m above the floor falls and hits the floor
-    - HH: Hammering
-    - CD: chair dragging
-    - VC: vacuum cleaner
-  - Noise source position (19 positions)
-    - 1F0m, 1F6m, 1F12m, 2F0m, 2F6m, 2F12m, 3F0m, 3F1m, 3F2m, 3F3m, 3F4m, 3F5m, 3F6m, 3F7m, 3F8m , 3F9m, 3F10m, 3F11m, 3F12m
+Each audio clip can be labeled as a noise type and a position.
 
 
 
@@ -33,6 +24,7 @@
   organization={IEEE}
 }
 ```
+
 
 
 ## TODO
