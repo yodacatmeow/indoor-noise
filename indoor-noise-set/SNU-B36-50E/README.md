@@ -14,14 +14,16 @@ Each audio clip can be labeled as a noise type and a position, where the first r
 
 ## Citing
 
+When reporting results using this dataset, please cite:
+
 ```
-@article{choi2019floornoise,
-  title={Classification of inter-floor noise type/position via supervised learning},
-  author={Choi, Hwiyong and Yang, Haesang and Lee, Seungjun and Seong, Woojae},
-  booktitle={not determined},
-  pages={XXX--XXX},
-  year={2019},
-  organization={XXX}
+@inproceedings{choi2018floornoise,
+  title={Classification of noise between floors in a building using pre-trained deep convolutional neural networks},
+  author={Choi, Hwiyong and Lee, Seungjun and Yang, Haesang and Seong, Woojae},
+  booktitle={2018 16th International Workshop on Acoustic Signal Enhancement (IWAENC)},
+  pages={535--539},
+  year={2018},
+  organization={IEEE}
 }
 ```
 
