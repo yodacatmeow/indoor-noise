@@ -12,6 +12,19 @@ Each audio clip can be labeled as a noise type and a position, where the first r
 
 ![](https://github.com/yodacatmeow/indoor-noise/blob/master/indoor-noise-set/SNU-B36-50E/figure/categories.jpeg)
 
+
+
+Several machine learning methods were evaluated on this dataset:
+
+| Title                                                        | Paper                                                        | Code |
+| ------------------------------------------------------------ | ------------------------------------------------------------ | ---- |
+| Classification of Noise Between Floors in a Building Using Pre-Trained Deep Convolutional Neural Networks | [choi2018]( <https://ieeexplore.ieee.org/abstract/document/8521392>) |      |
+| Source Type/Position Classification of Interfloor Noise in a Building using Deep Convolutional Neural Networks | yang2019 (under review)                                      |      |
+| Feature learning with varying the number of train data for inter-floor noise type/position classification in a building | lee2019 (under review)                                       |      |
+| Classification of inter-floor noise type/position via CNN-based supervised learning | choi2019 (in preparation)                                    |      |
+
+
+
 ## Citing
 
 When reporting results using this dataset, please cite:
