@@ -25,9 +25,7 @@ Several machine learning methods were evaluated on this dataset:
 | Title                                                        | Paper                                                        |                             Code                             |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | :----------------------------------------------------------: |
 | Classification of Noise Between Floors in a Building Using Pre-Trained Deep Convolutional Neural Networks | [choi2018]( <https://ieeexplore.ieee.org/abstract/document/8521392>) (*IWAENC 2018*) | [GitHub Repo.]( https://github.com/yodacatmeow/VGG16-SNU-B36-50) |
-| Source Type/Position Classification of Interfloor Noise in a Building using Deep Convolutional Neural Networks | yang2019 (under review, *IEEE Access*)                       |                                                              |
-| Feature learning with varying the number of train data for inter-floor noise type/position classification in a building | lee2019 (under review, *INTERSPEECH 2019*)                   |                                                              |
-| Classification of inter-floor noise type/position via CNN-based supervised learning | choi2019 (under review, *Appl. Sci.*)                        | [GitHub Repo.](https://github.com/yodacatmeow/indoor-noise/tree/master/inter-floor-noise-classification) |
+| Classification of inter-floor noise type/position via CNN-based supervised learning | [choi2019](<https://www.mdpi.com/2076-3417/9/18/3735>)( *Appl. Sci.*) | [GitHub Repo.](https://github.com/yodacatmeow/indoor-noise/tree/master/inter-floor-noise-classification) |
 
 This dataset is also available at [IEEE DataPorts](https://ieee-dataport.org/open-access/snu-b36-50e-inter-floor-noise-dataset).
 
