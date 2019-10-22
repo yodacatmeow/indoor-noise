@@ -10,7 +10,7 @@ An machine learning method was evaluated on this dataset:
 
 | Title                                                        | Paper                                                        |                             Code                             |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | :----------------------------------------------------------: |
-| Type/position classification of inter-floor noises in residential buildings with a single microphone via supervised learning | [choi2020a]( <https://ieeexplore.ieee.org/abstract/document/8521392>) (*Submitted to ICASSP 2020*) | [GitHub Repo.]( https://github.com/yodacatmeow/VGG16-SNU-B36-50) |
+| Type/position classification of inter-floor noises in residential buildings with a single microphone via supervised learning | [choi2020a]( <https://ieeexplore.ieee.org/abstract/document/8521392>) (*Submitted to ICASSP 2020*) | [GitHub Repo.]( https://github.com/yodacatmeow/indoor-noise/tree/master/inter-floor-noise-classification) |
 
 
 
