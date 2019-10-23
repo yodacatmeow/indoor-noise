@@ -39,17 +39,17 @@ def generate(metadata, output, tid, event_start, fold_conf, fold, labels, pp):
     print(str(output),"is generated!")
 
 
-# Test
+# Generate training/validation and test data
 if __name__ == "__main__":
     # Feature parameters
     pp_f = {'time_len':3.0, 'n_fft':2048, 'win_size':591, 'hop_size':591, 'adj_lim':0.0, 'width':224,'fmax': int(44100/2)}
     #pp_f = {'time_len': 1.5, 'n_fft': 2048, 'win_size': 296, 'hop_size': 296, 'adj_lim': 0.0, 'width': 224, 'fmax': int(44100 / 8)}
     # Names
-    pp_n = {'output_tr':'train_floor_3s_224_224',            # 'type' <-> 'position'
-            'output_v':'valid_floor_3s_224_224',             # 'type' <-> 'position'
-            'output_t':'test_floor_3s_224_224',              # 'type' <-> 'position'
-            'fold_conf':'fold_conf_3',                       # 'fold_conf_x' (select one in the metadata)
-            'labels': 'upper_lower'}                         # 'type' <-> 'position'
+    pp_n = {'output_tr':'train_floor_3s_224_224',            # 'type' <-> 'position' (or 'upper_lower')
+            'output_v':'valid_floor_3s_224_224',             # 'type' <-> 'position' (or 'upper_lower')
+            'output_t':'test_floor_3s_224_224',              # 'type' <-> 'position' (or 'upper_lower')
+            'fold_conf':'fold_conf_2',                       # 'fold_conf_x' (select one in the metadata)
+            'labels': 'upper_lower'}                         # 'type' <-> 'position' (or 'upper_lower')
 
     # training data
     for fold in range(1, 6):
