@@ -26,7 +26,7 @@ class load():
         x_data = []; y_data = []                                                            # Patch; label
         for i, row in dataframe.iterrows():                                                 # interators: i=index
             patch = row['patch']; x_data.append(np.float32(patch))                          # Patch -> "x_data"
-            y = np.zeros(self.n_category); y[self.labels_dict.index(row[self.labels])]=1   # One-hot encoding
+            y = np.zeros(self.n_category); y[self.labels_dict.index(row[self.labels])]=1    # One-hot encoding
             y_data.append(y)                                                                # y -> y_data
         return x_data, y_data
 
@@ -38,7 +38,7 @@ class load():
         self.pointer = (self.pointer + 1) % self.n_batch                                   # % operator initializes the pointer to 0
         return self.batch(minibatch_df)
 
-# Test:
+# Test "class load()"
 if __name__ == "__main__":
     data = load(dataframe='train_type_3s_224_224_k1.p', batch_size=1, labels='type')
 
