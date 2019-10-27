@@ -14,7 +14,7 @@ We built [three different datasets](https://github.com/yodacatmeow/indoor-noise/
 
 ### Single sensor acoustical approach
 
-A noise signal over a single microphone with a sufficient duration might contain the dispersive nature of the plate wave or unidentified features.
+A noise signal over a single microphone with a sufficient time duration might contain the dispersive nature of the plate wave or unidentified features. We used data-driven approach to catch these features and identify the noise signal. 
 
 
 
@@ -26,14 +26,16 @@ A noise signal over a single microphone with a sufficient duration might contain
 
 - [Appl. Sci.](https://www.mdpi.com/2076-3417/9/18/3735) (repo.)
   - This paper is expanded version of IWAENC 2018.
-  - We collected inter-floor noise(SNU-B36-50E) at many positions around the learned positions.
+  - We collected [inter-floor noise](https://github.com/yodacatmeow/indoor-noise/tree/master/indoor-noise-set/SNU-B36-50E) at many positions around the learned positions.
   - Type/position classification of noise at unlearned position was shown.
 
 - ICASSP 2020 (*submitted*, repo.)
   - In this paper, the generalizability of the proposed method in Appl. Sci. was addressed against inter-floor noise in residential buildings.
   - We collected inter-floor noise in two apartment buildings.
 
-- Mobile application (*iOS*, repo.)
+- Mobile application (repo.)
+  - The single sensor acoustical approach can be implemented on a smartphone device.
+  - Our inter-floor noise identification method was implemented into a smartphone application (iOS).
 
 
 
