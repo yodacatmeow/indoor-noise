@@ -23,16 +23,14 @@ A noise signal over a single microphone with a sufficient time duration might co
 - [IWAENC 2018](https://ieeexplore.ieee.org/abstract/document/8521392) ([repo.](https://github.com/yodacatmeow/VGG16-SNU-B36-50))
   - In this work, an method for inter-floor noise type/position classification was proposed and validated against an inter-floor noise dataset.
   - We built an inter-floor noise dataset [SNU-B36-50](https://github.com/yodacatmeow/SNU-B36-50) in an office building.
-
 - [Appl. Sci.](https://www.mdpi.com/2076-3417/9/18/3735) ([repo.](https://github.com/yodacatmeow/indoor-noise/tree/master/inter-floor-noise-classification/appl-sci))
   - This paper is expanded version of IWAENC 2018.
   - Type/position classification of noise at unlearned positions was shown.
   - We collected [inter-floor noise](https://github.com/yodacatmeow/indoor-noise/tree/master/indoor-noise-set/SNU-B36-50E) at new positions around the noise source positions in [SNU-B36-50](https://github.com/yodacatmeow/SNU-B36-50)  and the new data was not used in learning.
-
 - ICASSP 2020 (*submitted*, [repo.](https://github.com/yodacatmeow/indoor-noise/tree/master/inter-floor-noise-classification/icassp))
   - In this paper, the generalizability of the proposed method in [Appl. Sci.](https://www.mdpi.com/2076-3417/9/18/3735) was addressed against inter-floor noise in residential buildings.
   - We collected inter-floor noise in two apartment buildings.
-
-- Mobile phone application (repo.)
+- Mobile phone application ([repo.](https://github.com/yodacatmeow/indoor-noise/tree/master/indoor-noise-ios))
   - The single acoustical sensor approach can be implemented on a smartphone device.
-  - Our inter-floor noise identification method was implemented into a smartphone application (*iOS*).
+  - Our inter-floor noise identification method was implemented on a smartphone application (*iOS*).
+
