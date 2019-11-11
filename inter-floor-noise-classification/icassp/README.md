@@ -2,7 +2,9 @@
 
 (Under constuction...)
 
-This is the implementation code for the paper submitted to ICASSP 2020.  
+
+
+This is the implementation code for the paper submitted for ICASSP 2020.  
 
 
 
@@ -17,7 +19,16 @@ A convolutional neural networks based type/position classifier was tested agains
 
 ### Code implementation
 
-- Download  
+- Download the two datasets and locate all audio files to ```audio```  folder.
+- Generate a training/validation set and a test set.
+  - Open ```dataset.py```
+  - Select ```fold_conf``` in ```pp_n```
+  - Start a process ```python3 dataset.py```
+- Hyperparameter searching via random search
+
+
+
+### Results
 
 
 
