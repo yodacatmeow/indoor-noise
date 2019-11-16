@@ -17,12 +17,13 @@ A convolutional neural networks based type/position classifier was tested agains
 
 
 
-### Code implementation
+### Code
 
-- Download the two datasets and locate all audio files to ```audio```  folder.
-- Generate a training/validation set and a test set.
+- Download the two datasets ([CS-APT](https://github.com/yodacatmeow/indoor-noise/tree/master/indoor-noise-set/CS-APT) and [BDML-APT](https://github.com/yodacatmeow/indoor-noise/tree/master/indoor-noise-set/BDML-APT)) and locate all audio files in ```audio```  folder.
+- Download the [weights](https://www.cs.toronto.edu/~frossard/vgg16/vgg16_weights.npz) of VGG16 trained on ImageNet
+- Convert the audio files to a training/validation set and a test set.
   - Open ```dataset.py```
-  - Select ```fold_conf``` in ```pp_n```
+  - Write ```fold_conf``` and ```labels``` in ```pp_n``` dictionary
   - Start a process ```python3 dataset.py```
 - Hyperparameter searching via random search
 
