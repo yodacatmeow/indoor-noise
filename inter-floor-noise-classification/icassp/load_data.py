@@ -1,9 +1,6 @@
-# Public python modules #
+# Python modules #
 import numpy as np
-import pandas as pd
 import pickle
-import feature
-from os import path
 
 # If categories of test data = categories of the training data
 class load():
@@ -38,9 +35,9 @@ class load():
         self.pointer = (self.pointer + 1) % self.n_batch                                   # % operator initializes the pointer to 0
         return self.batch(minibatch_df)
 
-# Test "class load()"
+# Test:
 if __name__ == "__main__":
-    data = load(dataframe='train_type_3s_224_224_k1.p', batch_size=1, labels='type')
+    data = load(dataframe='train_k1.p', batch_size=1, labels='type')
 
     for i in range(data.n_batch):
         data.next_batch()

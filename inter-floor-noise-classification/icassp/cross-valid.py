@@ -1,10 +1,13 @@
 """
-# Descriptions
-   - "cross-valid.py"
-   - Prior to run this code, run "dataset.py" to generate dataset
+Descriptions
+    "cross-valid.py"
+    Prior to run this code, run "dataset.py" to generate dataset
+
+Issues
+    dtype
 """
 
-# Public python modules
+# Python modules
 import tensorflow as tf
 import pandas as pd
 import numpy as np
@@ -12,44 +15,50 @@ import pickle
 import random as rnd
 import os
 
-# Custom Pythone modules
+# Custom Python modules
 import vgg16_adap
 from load_data import load
 from cfmtx import cfmtx
 
 # default parameters
 pp  = {
-    'gpu_device': '0',
+    'gpu_device':'0',
     'dtype':tf.float32,
 
-    'saver':True, 'freeze_layer':False,                         # 'True' <-> 'False'
-    'pretrain_weights':'vgg16_weights.npz', 'bn': False,
+    'saver': True,
+    'freeze_layer': False,
+    'pretrain_weights':'vgg16_imagenet_1000.npz',               # Trained weights on ImageNet
+    'bn': False,                                                # Batch normalization
 
-    'is_optimal_h': False,
-    'cnt_max_rand_search':1,
-    'learning_rate_interval':[np.log10(0.0001),np.log10(100)],
-    'penalty_interval':[np.log10(0.0001),np.log10(100)],
+    'is_optimal_h': True,                                       # "False" for hyper-parameter searching
+    'cnt_max_rand_search': 1,                                   # Set as 100 for random hyper-parameter search
+    'learning_rate_interval':[np.log10(0.0001),np.log10(100)],  # Learning-rate search range
+    'penalty_interval':[np.log10(0.0001),np.log10(100)],        # Strength of regularization search range
 
-    'name_rec_summary':'result/vgg16-type-cv-summary.csv',      # 'type' <-> 'position' (or 'floor')
-    'name_rec':'result/vgg16-type',                             # 'type' <-> 'position' (or 'floor')
-    'name_rec_cfm':'result/vgg16-type',                         # 'type' <-> 'position' (or 'floor')
-    'name_saver':'saver_vgg16-type',                            # 'type' <-> 'position' (or 'floor')
+    'name_rec_summary':'result/summary.csv',                    # Training summary
+    'name_rec':'result/loss',                                   # Record loss
+    'name_rec_cfm':'result/cfm',                                # Record confusion matrix
+    'name_saver':'saver',
 
-    'path_metadata':'metadata.csv',                             # 'type' <-> 'position' (or 'floor')
-    'path_data_train':'train_type_3s_224_224',                  # 'type' <-> 'position' (or 'floor')
-    'path_data_valid':'valid_type_3s_224_224',                  # 'type' <-> 'position' (or 'floor')
+    'path_metadata':'metadata.csv',
+    'path_data_train':'train',
+    'path_data_valid':'valid',
 
-    'labels':'type',                                            # 'type' <-> 'position' (or 'floor')
+    'labels':'type',                                      
     'n_fold':5,
     'size_mbatch_train':64,
     'size_mbatch_valid':1,
-    'n_epoch': 30                                               # For random search, set this as '30'
+    'n_epoch': 5                                                # For random search, set this as '30'
 }
+
+# Optimal hyper-parameters
+optimal_lr = 0.00419999765764555; optimal_reg = 0.0184676371676488
+
 # Select a GPU device
 os.environ["CUDA_DEVICE_ORDER"]="PCI_BUS_ID"; os.environ["CUDA_VISIBLE_DEVICES"]=pp['gpu_device']
 
 # Generate random hyper-parameters
-reg = []; lr = []                                               # reg = regularization strength; lr = learning rate
+reg = []; lr = []                                          # reg = regularization strength; lr = learning rate
 for cnt in range(pp['cnt_max_rand_search']):
     lr.append(10**rnd.uniform(pp['learning_rate_interval'][0],pp['learning_rate_interval'][1]))
     reg.append(10**rnd.uniform(pp['penalty_interval'][0],pp['penalty_interval'][1]))
@@ -69,11 +78,9 @@ for fold in range(1, pp['n_fold'] + 1):
 
     # Hyper-parameter optimization using random search
     for cnt in range(pp['cnt_max_rand_search']):
-        lr_rand = lr[cnt]; reg_rand = reg[cnt]  # A random learning-rate and a random regularization strength
-
-        # After hyperparameter radom search, write the optimal hyperparameters:
-        if pp['is_optimal_h']: lr_rand = 0.00161522337376608; reg_rand = 0.0728455736568546
-
+        # A random learning-rate and a random regularization strength
+        lr_rand = lr[cnt]; reg_rand = reg[cnt]
+        if pp['is_optimal_h']: lr_rand = optimal_lr; reg_rand = optimal_reg;
         print('cnt:', cnt, 'fold:', fold, "random learning-rate:", lr_rand, ", random regularization strength:", reg_rand)
 
         # TensorFlow Session

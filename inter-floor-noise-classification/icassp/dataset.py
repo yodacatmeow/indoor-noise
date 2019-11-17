@@ -39,32 +39,33 @@ def generate(metadata, output, tid, event_start, fold_conf, fold, labels, pp):
     print(str(output),"is generated!")
 
 
-# Generate training/validation and test data
+# Test
 if __name__ == "__main__":
+
     # Feature parameters
     pp_f = {'time_len':3.0, 'n_fft':2048, 'win_size':591, 'hop_size':591, 'adj_lim':0.0, 'width':224,'fmax': int(44100/2)}
-    #pp_f = {'time_len': 1.5, 'n_fft': 2048, 'win_size': 296, 'hop_size': 296, 'adj_lim': 0.0, 'width': 224, 'fmax': int(44100 / 8)}
-    # Names
-    pp_n = {'output_tr':'train_floor_3s_224_224',            # 'type' <-> 'position' (or 'upper_lower')
-            'output_v':'valid_floor_3s_224_224',             # 'type' <-> 'position' (or 'upper_lower')
-            'output_t':'test_floor_3s_224_224',              # 'type' <-> 'position' (or 'upper_lower')
-            'fold_conf':'fold_conf_2',                       # 'fold_conf_x' (select one in the metadata)
-            'labels': 'upper_lower'}                         # 'type' <-> 'position' (or 'upper_lower')
 
-    # training data
+    # Dataset names
+    pp_n = {'output_tr':'train',                    # Training data
+            'output_v':'valid',                     # Validation data
+            'output_t':'test',                      # Test data
+            'fold_conf':'BDML_test-a',              # select one in the metadata; e.g. CS_test-A ...
+            'labels': 'type'}                       # select one in the metadata; e.g. type, floor ...
+
+    # Training data
     for fold in range(1, 6):
         fold_list = ['1', '2', '3', '4', '5']
         fold_list.remove(str(fold))
         output = pp_n['output_tr'] + '_k' + str(fold) + '.p'
-        generate(metadata='metadata.csv', output=output, tid='track_id', event_start='event_start_s', fold_conf=pp_n['fold_conf'], fold=fold_list, labels=pp_n['labels'], pp=pp_f)
+        generate(metadata='metadata.csv', output=output, tid='track-id', event_start='event-start-s', fold_conf=pp_n['fold_conf'], fold=fold_list, labels=pp_n['labels'], pp=pp_f)
 
     # Validation data
     for fold in range(1, 6):
         fold_list = [str(fold)]
         output = pp_n['output_v'] + '_k' + str(fold) + '.p'
-        generate(metadata='metadata.csv', output=output, tid = 'track_id', event_start='event_start_s', fold_conf=pp_n['fold_conf'], fold=fold_list, labels=pp_n['labels'], pp=pp_f)
+        generate(metadata='metadata.csv', output=output, tid = 'track-id', event_start='event-start-s', fold_conf=pp_n['fold_conf'], fold=fold_list, labels=pp_n['labels'], pp=pp_f)
 
     # Test data
     fold_list = ['test']
     output = pp_n['output_t'] + '.p'
-    generate(metadata='metadata.csv', output=output, tid='track_id', event_start='event_start_s', fold_conf=pp_n['fold_conf'], fold=fold_list, labels=pp_n['labels'], pp=pp_f)
+    generate(metadata='metadata.csv', output=output, tid='track-id', event_start='event-start-s', fold_conf=pp_n['fold_conf'], fold=fold_list, labels=pp_n['labels'], pp=pp_f)

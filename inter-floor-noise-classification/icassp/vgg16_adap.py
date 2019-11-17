@@ -5,13 +5,8 @@ Description
 References
     David Frossard's model was adapted for this project
         "vgg16.py": http://www.cs.toronto.edu/~frossard/post/vgg16/
-
-    You can see differences between David's code and this code.
-    The differences were annotated with:
-        "New"
-        "Disabled"
-        "Modified"
 """
+
 import tensorflow as tf
 import numpy as np
 from scipy.misc import imread, imresize

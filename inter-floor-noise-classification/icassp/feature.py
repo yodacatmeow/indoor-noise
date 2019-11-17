@@ -4,9 +4,6 @@ Descriptions:
     "time_len" [sec] sets the time length of the log-scaled Mel-spectrogram.
     VGG16 is designed for image recognition and it has three input channels.
     The log-scaled Mel-spectrogram is provided to all input channels of VGG16.
-
-Option:
-    - standardization
 """
 
 # Public python modules
@@ -15,13 +12,13 @@ import numpy as np
 import librosa
 import librosa.display
 import matplotlib.pyplot as plt
+from scipy.misc import imread, imresize
 from sklearn import preprocessing
 
 # Audio path
 def get_audio_path(audio_dir, track_id):
-    audio_format = '.m4a'
-    tid_str = '{:06d}'.format(track_id)
-    return os.path.join(audio_dir, tid_str[:3], tid_str + audio_format)
+
+    return os.path.join(audio_dir, track_id)
 
 
 # Selecting time range
@@ -71,15 +68,14 @@ def feature(tid, time_len = 3.0, n_fft = 2048, win_size = 591, hop_size = 591, f
         filepath = get_audio_path('audio', tid)
         s_n, fs = librosa.load(filepath, sr=None, mono=True)    # s_n = signal; fs = sampling freq.
 
-        # If audio clip is very short, do zero-padding:
+        # If audio clip is very short:
         if len(s_n) < time_len * fs: s_n = np.pad(s_n, (0, int(time_len * fs) - len(s_n)), 'constant')
         # Patch time limit (when mode = refer metadata)
         time_lim_indices = time_lim(s_n=s_n, fs=fs, time_len=time_len, event_start=event_start, adj_lim=adj_lim)
         # Cut 's_n'
         s_n = s_n[time_lim_indices[0]:time_lim_indices[1]]
-        # Standardization (Optional)
+        # Standardization
         #s_n = preprocessing.scale(s_n)
-
         # Patch
         patch = melspec2(s_n=s_n, fs=fs, n_fft=n_fft, win_size=win_size, hop_size=hop_size, n_mels=height, fmax=fmax, power=2)
 
@@ -92,7 +88,7 @@ def feature(tid, time_len = 3.0, n_fft = 2048, win_size = 591, hop_size = 591, f
 if __name__ == "__main__":
 
     # Test 1: ex) feature(tid = 0) draws "audio/000/000000.m4a"
-    result, feature = feature(tid = 10)  # using the default parameters
+    result, feature = feature(tid = 'C-063040.m4a',event_start=0.7)  # using the default parameters
 
     # Test 2: Draw the feature; You need to return "patch_xx" instead of "rgb_patch"
     plt.figure(figsize=(8, 6)), librosa.display.specshow(feature[:,:,0], x_axis='time'), plt.colorbar(), plt.clim(np.min(feature), np.max(feature)), plt.show()
