@@ -16,6 +16,8 @@ Inter-floor noises were generated on the upper floor, lower floor, and above two
 
 ![](https://github.com/yodacatmeow/indoor-noise/blob/master/indoor-noise-set/BDML-APT/figure/bdml-apt-size_v4.png)
 
+![](https://github.com/yodacatmeow/indoor-noise/blob/master/indoor-noise-set/BDML-APT/figure/table_drawing.png)
+
 | Title                                                        | Paper                                   |                             Code                             |
 | ------------------------------------------------------------ | --------------------------------------- | :----------------------------------------------------------: |
 | Type/position classification of inter-floor noises in residential buildings with a single microphone via supervised learning | choi2020a (*Submitted for ICASSP 2020*) | [GitHub Repo.]( https://github.com/yodacatmeow/indoor-noise/tree/master/inter-floor-noise-classification) |
