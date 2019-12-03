@@ -12,6 +12,10 @@ Inter-floor noises were generated on the upper floor, lower floor, and above two
 
 ![](https://github.com/yodacatmeow/indoor-noise/blob/master/indoor-noise-set/CS-APT/figure/cs-apt-size_v4.png)
 
+![](https://github.com/yodacatmeow/indoor-noise/blob/master/indoor-noise-set/CS-APT/figure/table_drawing.png)
+
+(Recv 0: Galaxy-S6-UWAL, Recv 1: Galaxy-S6-SLEE)
+
 An machine learning method was evaluated on this dataset:
 
 | Title                                                        | Paper                                   |                             Code                             |
@@ -22,7 +26,7 @@ An machine learning method was evaluated on this dataset:
 
 ## Citing
 
-When reporting results using this dataset, please cite:
+When reporting results using this dataset or figures, please cite:
 
 ```
 to be updated ...
