@@ -62,6 +62,6 @@ A convolutional neural networks based type/position classifier was tested agains
 When reporting results using this work, please cite:
 
 ```
-H.Choi, H. Yang, S.Lee, and W. Seong (2020). Type/position classification of inter-floor noises in residential buildings with a single microphon via supervised learning. Manuscirpt submitted for 28th European Signal Processing Conference (EUSIPCO2020).
+H. Choi, H. Yang, S. Lee, and W. Seong (2020). Type/position classification of inter-floor noises in residential buildings with a single microphon via supervised learning. Manuscirpt submitted for 28th European Signal Processing Conference (EUSIPCO2020).
 ```
 
