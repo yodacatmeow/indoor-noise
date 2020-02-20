@@ -1,7 +1,5 @@
 # Type/position classification of inter-floor noises in residential buildings with a single microphone via supervised learning
 
-**(Coming soon!)**
-
 This is the implementation code for the paper submitted for 28th European Signal Processing Conference (EUSIPCO 2020).  
 
 
@@ -42,7 +40,7 @@ A convolutional neural networks based type/position classifier was tested agains
     - ```cnt_max_rand_search = 1```
     - Set ```labels``` to one of ```{'type', 'floor', 'position'}``` 
     - ```n_epoch = 50```
-    - Set ```optimal_lr``` and ```optimal_reg``` to the optimal hyperparameter
+    - Set ```optimal_lr``` and ```optimal_reg``` to the optimal hyperparameters
     - Start a process ```python3 cross-valid.py```
 - Test
   - Set ```labels``` to one of ```{'type', 'floor', 'position'}``` 
@@ -53,6 +51,17 @@ A convolutional neural networks based type/position classifier was tested agains
 
 ### Results
 
+- The results of all the tasks in the paper are uploaded [here](https://github.com/yodacatmeow/indoor-noise/tree/master/inter-floor-noise-classification/eusipco2020/results) (name of the folders represent the names of tasks in the paper)
+- The files **cfm-sum-percent.csv** are the confusion matrices shown in the paper
+- The files **h-rand-search-summary.csv** summarize the random search for finding the optimal hyperparameter pair
+
 
 
 ### Citing
+
+When reporting results using this work, please cite:
+
+```
+H.Choi, H. Yang, S.Lee, and W. Seong (2020). Type/position classification of inter-floor noises in residential buildings with a single microphon via supervised learning. Manuscirpt submitted for 28th European Signal Processing Conference (EUSIPCO2020).
+```
+
