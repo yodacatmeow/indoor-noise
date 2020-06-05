@@ -12,9 +12,9 @@ Inter-floor noises were generated on the upper floor, lower floor, and above two
 
 ![](https://github.com/yodacatmeow/indoor-noise/blob/master/indoor-noise-set/BDML-APT/figure/table_drawing.png)
 
-| Title                                                        | Paper                                   |                             Code                             |
-| ------------------------------------------------------------ | --------------------------------------- | :----------------------------------------------------------: |
-| Type/position classification of inter-floor noises in residential buildings with a single microphone via supervised learning | choi2020a (*Submitted for EUSIPCO2020*) | [GitHub Repo.]( https://github.com/yodacatmeow/indoor-noise/tree/master/inter-floor-noise-classification/eusipco2020) |
+| Title                                                        | Paper                                  |                             Code                             |
+| ------------------------------------------------------------ | -------------------------------------- | :----------------------------------------------------------: |
+| Type/position classification of inter-floor noises in residential buildings with a single microphone via supervised learning | choi2020a (*Accepted for EUSIPCO2020*) | [GitHub Repo.]( https://github.com/yodacatmeow/indoor-noise/tree/master/inter-floor-noise-classification/eusipco2020) |
 
 Metadata of this dataset is available [here](https://github.com/yodacatmeow/indoor-noise/blob/master/inter-floor-noise-classification/eusipco2020/metadata.csv) and each column in the metadata represents:
 
@@ -30,6 +30,6 @@ Metadata of this dataset is available [here](https://github.com/yodacatmeow/indo
 When reporting results using this dataset, please cite:
 
 ```
-H. Choi, H. Yang, S. Lee, and W. Seong (2020). Type/position classification of inter-floor noises in residential buildings with a single microphon via supervised learning. Manuscirpt submitted for 28th European Signal Processing Conference (EUSIPCO2020).
+H. Choi, H. Yang, S. Lee, and W. Seong (2020). Type/position classification of inter-floor noises in residential buildings with a single microphone via supervised learning. Manuscript accepted for 28th European Signal Processing Conference (EUSIPCO2020).
 ```
 
