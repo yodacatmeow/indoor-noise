@@ -32,6 +32,6 @@ Metadata of this dataset is available [here](https://github.com/yodacatmeow/indo
 When reporting results using this dataset, please cite:
 
 ```
-H. Choi, H. Yang, S. Lee, and W. Seong (2020). Type/position classification of inter-floor noises in residential buildings with a single microphon via supervised learning. Manuscript accepted for 28th European Signal Processing Conference (EUSIPCO2020).
+H. Choi, H. Yang, S. Lee, and W. Seong (2020). Type/position classification of inter-floor noises in residential buildings with a single microphone via supervised learning. Manuscript accepted for 28th European Signal Processing Conference (EUSIPCO2020).
 ```
 
